@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './_components/navbar/navbar.component';
 import { FooterComponent } from './_components/footer/footer.component';
 import { MemberListComponent } from './_pages/member-list/member-list.component';
+import { AddMemberComponent } from './_components/add-member/add-member.components';
+import { EditMemberComponent } from './_components/edit-member/edit-member.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { MemberListComponent } from './_pages/member-list/member-list.component'
     NavbarComponent,
     FooterComponent,
     MemberListComponent,
+    AddMemberComponent,
+    EditMemberComponent
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],

@@ -1,0 +1,47 @@
+<form [formGroup]="addMemberForm" class="max-w-md mx-auto" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Nombre:</label>
+      <input formControlName="name" type="text"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="formControls.name.invalid && (formControls.name.dirty || formControls.name.touched)"
+           class="text-red-500 text-xs italic">
+        <div *ngIf="formControls.name.hasError('required')">El nombre es requerido.</div>
+        <div *ngIf="formControls.name.hasError('minlength') || formControls.name.hasError('maxlength')">El nombre debe tener entre 3 y 20 caracteres.</div>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Correo Electrónico:</label>
+      <input formControlName="email" type="email"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="formControls.email.invalid && (formControls.email.dirty || formControls.email.touched)"
+           class="text-red-500 text-xs italic">
+        <div *ngIf="formControls.email.hasError('required')">El correo electrónico es requerido.</div>
+        <div *ngIf="formControls.email.hasError('email')">Correo electrónico inválido.</div>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Semestre:</label>
+      <input formControlName="semester" type="number"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="formControls.semester.invalid && (formControls.semester.dirty || formControls.semester.touched)"
+           class="text-red-500 text-xs italic">
+        <div *ngIf="formControls.semester.hasError('required')">El semestre es requerido.</div>
+        <div *ngIf="formControls.semester.hasError('min') || formControls.semester.hasError('max')">El semestre debe estar entre 1 y 10.</div>
+      </div>
+    </div>
+    <div class="mb-6">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Carrera:</label>
+      <input formControlName="career" type="text"
+             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="formControls.career.invalid && (formControls.career.dirty || formControls.career.touched)"
+           class="text-red-500 text-xs italic">
+        <div *ngIf="formControls.career.hasError('required')">La carrera es requerida.</div>
+        <div *ngIf="formControls.career.hasError('minlength') || formControls.career.hasError('maxlength')">La carrera debe tener entre 3 y 50 caracteres.</div>
+      </div>
+    </div>
+    <button type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+      Agregar Integrante
+    </button>
+  </form>
+  
